@@ -1,12 +1,20 @@
-def func(intlist):
-    sum = 0
+def summultiplesof4(intlist):
+    valuessum = 0
     while len(intlist) != 0:
         a = intlist.pop(0)
         if a % 4 == 0:
-            sum += a
+            valuessum += a
+    return valuessum
 
-    return sum
 
-lst = [int(value) for value in input("Enter list of integers: ").split()]
+data = input("Enter list of integers: ").split()
+lst = []
+for value in data:
+    try:
+        lst.append(int(value))
+    except ValueError:
+        print("Value is not integer.")
+        exit(1)
+
 print(lst)
-print(func(lst))
+print("Result:", summultiplesof4(lst))
